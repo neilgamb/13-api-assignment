@@ -1417,22 +1417,29 @@ main {
         padding-left: 0.9375rem; } }
     main div.navs h2:last-child:not(:first-child) {
       float: right; }
-  main section.menu {
+  main section.menu div.menuItem {
+    width: 25%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    display: inline-block;
+    border: solid;
+    border-width: 1px;
     text-align: center; }
-    main section.menu div.menuItem {
-      width: 50%;
-      float: left;
-      padding-right: 0.625rem;
-      padding-left: 0.625rem;
-      display: inline-block;
-      border: solid;
-      border-width: 1px;
-      float: left; }
-      @media print, screen and (min-width: 40em) {
-        main section.menu div.menuItem {
-          padding-right: 0.9375rem;
-          padding-left: 0.9375rem; } }
-      main section.menu div.menuItem:last-child:not(:first-child) {
-        float: right; }
+    @media print, screen and (min-width: 40em) {
+      main section.menu div.menuItem {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; } }
+    main section.menu div.menuItem:last-child:not(:first-child) {
+      float: right; }
+    main section.menu div.menuItem button {
+      color: #fff;
+      background-color: #6496c8;
+      text-shadow: -1px 1px #417cb8;
+      border: none;
+      font-size: 1em;
+      padding: 5px 5px;
+      border-radius: 5px;
+      margin-bottom: 20px; }
 
 /*# sourceMappingURL=style.css.map */
