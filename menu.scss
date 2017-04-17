@@ -1,0 +1,40 @@
+
+
+header {
+    @include grid-row();
+
+    h1 {
+        @include grid-column(12);
+        text-align: center;
+    }
+}
+
+main {
+    @include grid-row();
+
+    div.navs {
+        h2 {
+            @include grid-column(6);
+            text-align: center;
+            border: solid;
+            border-width: 1px;
+            background-color: lightgray;
+        }
+    }
+
+    section.menu {
+        text-align: center;
+
+        div.menuItem {
+            @include grid-column(6);
+            display: inline-block;
+            border: solid;
+            border-width: 1px;
+            float: left;
+            }
+    }
+
+}
+
+
+
