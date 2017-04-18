@@ -27,24 +27,31 @@ main {
         div.menuItem {
             @include grid-column(3);
             display: inline-block;
-            border: solid;
-            border-width: 1px;
             text-align: center;
 
-            button {
-                color: #fff;
-                background-color: #6496c8;
-                text-shadow: -1px 1px #417cb8;
-                border: none;
-                font-size: 1em;
-                padding: 5px 5px;
-                border-radius: 5px;
-                margin-bottom: 20px;
+            div.contents {
+                border: solid;
+                border-width: 1px;
+                padding: 10px;
+
+                button.order {
+                    color: #fff;
+                    background-color: #6496c8;
+                    text-shadow: -1px 1px #417cb8;
+                    border: none;
+                    font-size: 1em;
+                    padding: 5px 5px;
+                    border-radius: 5px;
+                    margin-bottom: 20px;
+                }
             }
-            }
+        }
     }
 }
 
+main section.menu div.menuItem:last-child:not(:first-child) {
+     float: none; 
+}
 
 
 

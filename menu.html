@@ -3,6 +3,15 @@
 <html>
 
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <script type="x-mustache-template" id="menu-template">
+                <div class="contents">
+                    <h2 class="itemName">{{ name }}</h2>
+                    <p class="descr">{{ description }}</p>
+                    <p class="price">{{ price }}</p>
+                    <button class="order">Order</button>
+                </div>
+    </script>
     <link rel="stylesheet" href="style.css">
     <script src="menu.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,44 +30,15 @@
             </div>
 
             <section class="menu">
-                    <!--<div class="menuItem">
-                        <h2 class="itemName">Fish</h2>
-                        <p class="descr">Delicious white cod</p>
-                        <p class="price">2.99</p>
-                        <button>Order</button>
-                    </div>
-                    <div class="menuItem">
-                        <h2 class="itemName">Fish</h2>
-                        <p class="descr">Delicious white cod</p>
-                        <p class="price">2.99</p>
-                        <button>Order</button>
-                    </div>
-                    <div class="menuItem">
-                        <h2 class="itemName">Fish</h2>
-                        <p class="descr">Delicious white cod</p>
-                        <p class="price">2.99</p>
-                        <button>Order</button>
-                    </div>
-                    <div class="menuItem">
-                        <h2 class="itemName">Fish</h2>
-                        <p class="descr">Delicious white cod</p>
-                        <p class="price">2.99</p>
-                        <button>Order</button>
-                    </div>
-                    <div class="menuItem">
-                        <h2 class="itemName">Fish</h2>
-                        <p class="descr">Delicious white cod</p>
-                        <p class="price">2.99</p>
-                        <button>Order</button>
-                    </div>
-                    <div class="menuItem">
-                        <h2 class="itemName">Fish</h2>
-                        <p class="descr">Delicious white cod</p>
-                        <p class="price">2.99</p>
-                        <button>Order</button>
-                    </div>-->
-
+                        <!--<div class="contents">
+                            <h2 class="itemName">Fish</h2>
+                            <p class="descr">Delicious white cod</p>
+                            <p class="price">2.99</p>
+                            <button class="order">Order</button>
+                        </div>-->
             </section>
+            <footer>
+            </footer>
     </main>
 </body>
 </html >

@@ -9,8 +9,8 @@ function getMenu(){
                     console.log(response[i].available)
                     if (response[i].available === true){
                         addItem(response[i]);
-                    }
-            }
+                    };
+            };
   
     });
 
@@ -19,51 +19,20 @@ function getMenu(){
 }
 
 function addItem(item){
+    let template = document.querySelector('#menu-template').innerHTML;
+
     let parent = document.querySelector('.menu');
-    parent.classList.add('menu');
-
-    let menuItem = document.createElement('div');
-    menuItem.classList.add('menuItem');
-
-    let itemName = document.createElement('h2');
-    itemName.classList.add('itemName');
-    itemName.textContent = item.name;
-
-    let description = document.createElement('p');
-    description.classList.add('descr');
-    description.textContent = item.description;
-
-    let price = document.createElement('p');
-    price.classList.add('price');
-    price.textContent = item.price;
-
-    let button = document.createElement('button');
-    button.classList.add('orderButton');
-    button.textContent = "Order";
-
-    button.addEventListener('click', function(){
-
-        let request = new XMLHttpRequest();
-        request.open('POST', 'http://tiy-28202.herokuapp.com/order');
-
-        request.addEventListener('load', function() {
-        console.log('received response');
-        console.log(item.id);
-    })
-        request.send(JSON.stringify({
-        table_id: 1,
-        menu_id: item.id,
-
-    }));
-
+    let container = document.createElement('div');
+    container.classList.add('menuItem');
+    container.innerHTML = Mustache.render(template, {
+        name: item.name,
+        description: item.description,
+        price: item.price,
     });
 
-        parent.appendChild(menuItem);
-        menuItem.appendChild(itemName);
-        menuItem.appendChild(description);
-        menuItem.appendChild(price);
-        menuItem.appendChild(button);
+    parent.appendChild(container);
 }
+
 
 window.addEventListener('load', function() {
     getMenu();
