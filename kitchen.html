@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+        <script type="x-mustache-template" id="menu-template">
+            <div class="contents">
+                <h2 class="itemName">{{ name }}</h2>
+                <p class="avail">{{ available }}</p>
+                <button class="changeAvail">Change Availability</button>
+            </div>
+        </script>
+        <script type="x-mustache-template" id="orders-template">
+            <div class="table">
+                <h2 class="tableName">{{ tableName }}</h2>
+                <p>In Progress: {{ in_progress }}</p>
+                <ul>
+                    {{ #items }}
+                    <li>{{ name }}</li>
+                    {{ /items }}
+                </ul>
+                <button class="complete">Complete</button>
+            </div>
+        </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="kitchen.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <header>
+        <h1>Kitchen</h1>
+    </header>
+
+    <main>
+        <section class="menu"></section>
+
+        <section class="orders"></section>
+        
+    </main>
+</body>
+</html>

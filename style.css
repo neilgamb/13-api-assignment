@@ -1402,21 +1402,6 @@ main {
     content: ' '; }
   main::after {
     clear: both; }
-  main div.navs h2 {
-    width: 50%;
-    float: left;
-    padding-right: 0.625rem;
-    padding-left: 0.625rem;
-    text-align: center;
-    border: solid;
-    border-width: 1px;
-    background-color: lightgray; }
-    @media print, screen and (min-width: 40em) {
-      main div.navs h2 {
-        padding-right: 0.9375rem;
-        padding-left: 0.9375rem; } }
-    main div.navs h2:last-child:not(:first-child) {
-      float: right; }
   main section.menu div.menuItem {
     width: 25%;
     float: left;
@@ -1445,6 +1430,87 @@ main {
         margin-bottom: 20px; }
 
 main section.menu div.menuItem:last-child:not(:first-child) {
+  float: none; }
+
+header {
+  max-width: 100em;
+  margin-right: auto;
+  margin-left: auto; }
+  header::before, header::after {
+    display: table;
+    content: ' '; }
+  header::after {
+    clear: both; }
+  header h1 {
+    width: 100%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    text-align: center; }
+    @media print, screen and (min-width: 40em) {
+      header h1 {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; } }
+    header h1:last-child:not(:first-child) {
+      float: right; }
+
+main section.menu {
+  max-width: 100em;
+  margin-right: auto;
+  margin-left: auto; }
+  main section.menu::before, main section.menu::after {
+    display: table;
+    content: ' '; }
+  main section.menu::after {
+    clear: both; }
+  main section.menu div.menuContents {
+    width: 25%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: solid;
+    border-width: 1px; }
+    @media print, screen and (min-width: 40em) {
+      main section.menu div.menuContents {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; } }
+    main section.menu div.menuContents:last-child:not(:first-child) {
+      float: right; }
+main section.orders {
+  max-width: 100em;
+  margin-right: auto;
+  margin-left: auto; }
+  main section.orders::before, main section.orders::after {
+    display: table;
+    content: ' '; }
+  main section.orders::after {
+    clear: both; }
+  main section.orders div.orderContents {
+    width: 25%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    text-align: center;
+    border: solid;
+    border-width: 1px; }
+    @media print, screen and (min-width: 40em) {
+      main section.orders div.orderContents {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; } }
+    main section.orders div.orderContents:last-child:not(:first-child) {
+      float: right; }
+    main section.orders div.orderContents ul {
+      padding: 0px; }
+      main section.orders div.orderContents ul li {
+        display: inline-block; }
+        main section.orders div.orderContents ul li p {
+          display: inline-block; }
+
+main section.menu div.menuContents:last-child:not(:first-child) {
   float: none; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,55 @@
+header {
+    @include grid-row();
+
+    h1 {
+        @include grid-column(12);
+        text-align: center;
+    }
+}
+
+main {
+
+    section.menu {
+    @include grid-row();
+
+        div.menuContents {
+            @include grid-column(3);
+            text-align: center;
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: solid;
+            border-width: 1px;
+        }
+    }
+
+    section.orders {
+    @include grid-row();
+
+        div.orderContents {
+            @include grid-column(3);
+            text-align: center;
+            border: solid;
+            border-width: 1px;
+
+            ul {
+                padding: 0px;
+                
+                li {
+                display: inline-block;
+
+                p {
+                    display: inline-block;
+
+                }
+                }
+
+            }
+        }
+    }
+}
+
+main section.menu div.menuContents:last-child:not(:first-child) {
+    float: none;
+}
+
