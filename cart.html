@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <script type="x-mustache-template" id="total-template">
+            <p class="totalBill">Total Bill:</p>
+            <p class="totalBill">${{ totalBill }}</p>
+    </script>
+    <script type="x-mustache-template" id="bill-template">
+            <p class="billTable">{{ description }}</p>
+            <p class="billItem">${{ price }}</p>
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="cart.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class="cartPage">
+    <header>
+        <h1>CART</h1>
+    </header>
+
+    <main>
+        <h2>Ordered Items</h2>
+        <section class="menu"></section>
+    </main>
+</body>
+</html>
+
+
+

@@ -10,10 +10,6 @@
             <p class="price">${{ price }}</p>
             <button class="order">Order</button>
     </script>
-    <script type="x-mustache-template" id="bill-template">
-            <p class="billTable">{{ description }}</p>
-            <p class="billItem">${{ price }}</p>
-    </script>
     <link rel="stylesheet" href="style.css">
     <script src="menu.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,9 +22,7 @@
 
     <main>
         <h2>Available Items</h2>
-        <section class="menu" data-equalizer data-equalizer-mq="large-up"></section>
-        <h2>Bill</h2>
-        <section class="bills"></section>
+        <section class="menu"></section>
     </main>
 </body>
 </html>

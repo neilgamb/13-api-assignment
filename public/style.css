@@ -1299,6 +1299,7 @@ body {
       padding-right: 0.625rem;
       padding-left: 0.625rem;
       text-align: center;
+      height: 40vh;
       background-color: #F7B538;
       border: solid;
       border-color: #780116;
@@ -1480,3 +1481,92 @@ main h2 {
   @media (min-width: 1000px) {
       main h2:last-child:not(:first-child) {
         float: right; } }
+
+body header {
+  max-width: 100em;
+  margin-right: auto;
+  margin-left: auto; }
+  body header::before, body header::after {
+    display: table;
+    content: ' '; }
+  body header::after {
+    clear: both; }
+  body header h1 {
+    width: 100%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    color: white;
+    font-size: 4em;
+    margin-bottom: 0px;
+    text-align: center; }
+    @media print, screen and (min-width: 40em) {
+      body header h1 {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; } }
+    body header h1:last-child:not(:first-child) {
+      float: right; }
+
+body section.menu {
+  max-width: 100em;
+  margin-right: auto;
+  margin-left: auto; }
+  body section.menu::before, body section.menu::after {
+    display: table;
+    content: ' '; }
+  body section.menu::after {
+    clear: both; }
+  body section.menu div.menuItemTotal {
+    width: 100%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    text-align: center;
+    background-color: #F7B538;
+    border: solid;
+    border-color: #780116;
+    border-width: 10px;
+    border-radius: 20px; }
+    @media print, screen and (min-width: 40em) {
+      body section.menu div.menuItemTotal {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; } }
+    body section.menu div.menuItemTotal:last-child:not(:first-child) {
+      float: right; }
+    @media (min-width: 500px) {
+      body section.menu div.menuItemTotal {
+        width: 50%;
+        float: left;
+        padding-right: 0.625rem;
+        padding-left: 0.625rem; } }
+  @media print and (min-width: 500px), screen and (min-width: 500px) and (min-width: 40em) {
+    body section.menu div.menuItemTotal {
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem; } }
+    @media (min-width: 500px) {
+        body section.menu div.menuItemTotal:last-child:not(:first-child) {
+          float: right; } }
+    @media (min-width: 1000px) {
+      body section.menu div.menuItemTotal {
+        width: 25%;
+        float: left;
+        padding-right: 0.625rem;
+        padding-left: 0.625rem; } }
+  @media print and (min-width: 1000px), screen and (min-width: 1000px) and (min-width: 40em) {
+    body section.menu div.menuItemTotal {
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem; } }
+    @media (min-width: 1000px) {
+        body section.menu div.menuItemTotal:last-child:not(:first-child) {
+          float: right; } }
+
+p.billTable {
+  font-size: 1em; }
+
+p.billItem {
+  font-size: 1em;
+  font-weight: bold; }
+
+p.totalBill {
+  font-size: 2em;
+  font-weight: bold; }

@@ -1,16 +1,32 @@
-// IMPORT SHARED FUNCTION(S)
+// Function getMenu()
+// ------------------------------------------------------ 
+//    Retrieves data from /menu endpoint.  All items are
+//    called using addItem() below
 
-let shared = require('./shared');
+function getMenu(){
+    let request = new XMLHttpRequest();
+    request.open('GET', 'http://tiy-28202.herokuapp.com/menu');
+    request.addEventListener('load', function(){
 
-// FUNCTION 1 | addItem(item): 
-//  - Used in shared.menu() in 'load' event listener below
-//  - For each object in /menu, creates 'div' element in the 'menu' 
-//    section and populates the mustache template with the applicable 
-//    properties
-//  - On 'Kitchen' page, the button element that is created is an 
-//    'change availability' button
+        let response = JSON.parse(request.responseText);
 
-function addKitchenItem(item){
+            for(let i = 0; i < response.length; i++){
+                     addItem(response[i]);
+            };
+    });
+
+    request.send();
+};
+
+// Function addItem()
+// ------------------------------------------------------ 
+//    For each  object in /menu, creates 'div' 
+//    element in the 'menu' section and populates the mustache 
+//    template with the applicable properties
+//    On 'Kitchen' page, the button element that is created is an 
+//    'Change Availability' button
+
+function addItem(item){
 
     let avail;
 
@@ -45,7 +61,8 @@ function addKitchenItem(item){
     });
 };
 
-// FUNCTION 2 |  getMenu()
+// Function addItem()
+// ------------------------------------------------------ 
 //  - Retrieves data from /order endpoint
 
 function getTables() {
@@ -65,7 +82,8 @@ function getTables() {
     request.send();
 }
 
-// FUNCTION 3 | addItem(item): 
+// Function addTable()
+// ------------------------------------------------------ 
 //  - Used in getTables() in 'load' event listener below
 //  - For each object in /order, creates 'div' element in the 'orders' 
 //    section and populates the mustache template with the applicable 
@@ -102,6 +120,6 @@ function addTable(item) {
 };
 
 window.addEventListener('load', function() {
-    shared.menuKitchen(addKitchenItem);
+    getMenu();
     getTables();
 });
