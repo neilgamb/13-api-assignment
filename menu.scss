@@ -1,44 +1,71 @@
-header {
-    @include grid-row();
+body {
+    background-color: #780116;
 
-    h1 {
-        @include grid-column(12);
-        text-align: center;
+
+    header {
+        @include grid-row();
+
+        h1 {
+            @include grid-column(12);
+            color: white;
+            font-size: 4em;
+            margin-bottom: 0px;
+            text-align: center;
+        }
     }
-}
 
-main {
-    @include grid-row();
+// MENU STYLING - applies to Menu items on both MENU and KITCHEN page
 
     section.menu {
+        @include grid-row();
 
         div.menuItem {
-            @include grid-column(3);
-            display: inline-block;
+            @include grid-column(12);
             text-align: center;
-            
-            div.contents {
-                border: solid;
-                border-width: 1px;
-                padding: 10px;
+            background-color: #F7B538;
+            border: solid;
+            border-color: #780116;
+            border-width: 10px;
+            border-radius: 20px;
 
-                button.order {
-                    color: #fff;
-                    background-color: #6496c8;
-                    text-shadow: -1px 1px #417cb8;
-                    border: none;
-                    font-size: 1em;
-                    padding: 5px 5px;
-                    border-radius: 5px;
-                    margin-bottom: 20px;
-                }
+            @media(min-width: 500px){
+                @include grid-column(6);
+            }
+
+            @media(min-width: 1000px){
+                @include grid-column(3);
+            }
+
+            h2.itemName {
+                font-size: 1.4em;
             }
         }
     }
 }
 
-main section.menu div.menuItem:last-child:not(:first-child) {
-     float: none; 
+p.descr {
+
+    font-size: 1em;
+}
+
+p.price {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+button.order {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #fff;
+    background-color: #D8572A;
+    border: none;
+    padding: 10px, 20px, 10px, 20px;
+    border-radius: 5px;
+}
+
+
+body section.menu div.menuItem:last-child:not(:first-child) {
+    float: left;
 }
 
 
