@@ -10,7 +10,7 @@
                 <button class="changeAvail">Change Availability</button>
         </script>
         <script type="x-mustache-template" id="orders-template">
-                <h2 class="tableName">{{ tableName }}</h2>
+                <h2 class="tableName">Table: {{ tableName }}</h2>
                 <p>{{ in_progress }}</p>
                 <ul>
                     {{ #items }}
@@ -20,6 +20,8 @@
                 <button class="complete">Complete</button>
         </script>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="kitchen.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -29,7 +31,6 @@
         <h1>KITCHEN</h1>
     </header>
     <main>
-        <h2>All Items</h2>
         <section class="menu"></section>
         <h2>OPEN ORDERS</h2>
         <section class="orders"></section>

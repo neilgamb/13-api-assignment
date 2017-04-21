@@ -1,60 +1,75 @@
+.cartPage {
+    background-image: url('http://multi-clean.com/wp-content/uploads/2016/02/tabletop3.jpg');
+}
+
 body {
 
-    header {
-        @include grid-row();
-
-        h1 {
-            @include grid-column(12);
-            color: white;
-            font-size: 4em;
-            margin-bottom: 0px;
-            text-align: center;
-        }
-    }
-
-
     section.menu {
-        @include grid-row();
 
         div.menuItemTotal {
             @include grid-column(12);
             text-align: center;
-            background-color: #F7B538;
-            border: solid;
-            border-color: #780116;
-            border-width: 10px;
-            border-radius: 20px;
-
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            background-color: black;
+            opacity: .8;
+            
             @media(min-width: 500px){
-                @include grid-column(6);
+                @include grid-column(12);
             }
 
             @media(min-width: 1000px){
-                @include grid-column(3);
+                @include grid-column(12);
             }
 
+            p {
+                font-size: 2em;
+                font-weight: bold;
+            }
+        }
 
+        div.menuItem {
+
+            p.billTable {
+                display: inline-block;
+            }
+
+            p.billItem {
+                display: inline-block;
+            }
         }
     }
+
+    section.payment {
+        display: none;
+        @include grid-row();
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        background-color: black;
+        // opacity: .8;
+        
+        @media(min-width: 500px){
+            @include grid-column(12);
+        }
+
+        @media(min-width: 1000px){
+            @include grid-column(12);
+        }
+
+        p.paymentInfo {
+            display: inline-block;
+            width: 50%;
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        select.cardType {
+            width: 46%;
+            line-height: 1.15;
+        }
+
+    }
 }
-
-p.billTable {
-
-    font-size: 1em;
-}
-
-p.billItem {
-    font-size: 1em;
-    font-weight: bold;
-}
-
-p.totalBill {
-    font-size: 2em;
-    font-weight: bold;
-}
-
-
-
 
 
 
