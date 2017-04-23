@@ -74,9 +74,9 @@ function getTables() {
         let response = JSON.parse(request.responseText);
 
             for(let i = 0; i < response.length; i++){
-                 if(response[i].in_progress === true){
+                //  if(response[i].in_progress === true){
                         addTable(response[i]);
-                 }
+                //  }
             };
         });
 

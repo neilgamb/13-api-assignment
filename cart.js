@@ -2,9 +2,9 @@
 // ------------------------------------------------------ 
 //   - Retrieves data from /bill?table_id=<table_id> endpoint
 
-function getBill() {
+function getBill(table) {
     let request = new XMLHttpRequest();
-    request.open('GET', 'http://tiy-28202.herokuapp.com/bill?table_id=neilson');
+    request.open('GET', 'http://tiy-28202.herokuapp.com/bill?table_id='+table);
     request.addEventListener('load', function(){
 
         let response = JSON.parse(request.responseText);
@@ -52,19 +52,20 @@ function addTotal(total){
     parent.appendChild(container);
 }
 
-function getTotal() {
+function getTotal(table) {
     let request = new XMLHttpRequest();
-    request.open('GET', 'http://tiy-28202.herokuapp.com/bill?table_id=neilson');
+    request.open('GET', 'http://tiy-28202.herokuapp.com/bill?table_id='+table);
     request.addEventListener('load', function(){
 
         let response = JSON.parse(request.responseText);
         let total = 0;
 
+            console.log(response.items.length);
             for(let i = 0; i < response.items.length; i++){
                         total = total + response.items[i].price;
             };
             
-        addTotal(total);
+        addTotal(total.toFixed(2));
 
         });
 
@@ -77,16 +78,15 @@ function getTables() {
         request.addEventListener('load', function(){
 
             let response = JSON.parse(request.responseText);
-            console.log(response);
 
-                let selection = document.querySelector('.tableID');
-                selection.addEventListener('change', function(){
+            let selection = document.querySelector('.tableID');
+            selection.addEventListener('change', function(){
+                
+            let showPayment = document.querySelector('.payment');
+            showPayment.style.display = "block";
 
-                    let showPayment = document.querySelector('.payment');
-                    showPayment.style.display = "block";
-
-                    getTotal();
-                    getBill();
+                    getTotal(selection.value);
+                    getBill(selection.value);
 
                 });
 
@@ -102,12 +102,10 @@ function getTables() {
 }
 
 function addTable(table_id){
-    let dropdown = document.querySelector('#dropdown-template').innerHTML;
     let parent = document.querySelector('.tableID');
     let container = document.createElement('option');
-    container.innerHTML = Mustache.render(dropdown, {
-        tableName: table_id,
-        });
+    container.textContent = table_id;
+    container.value = table_id;
 
     parent.appendChild(container); 
 
@@ -116,6 +114,4 @@ function addTable(table_id){
 
 window.addEventListener('load', function() {
     getTables();
-    // getTotal();
-    // getBill();
 });
