@@ -8,7 +8,7 @@ module.exports = {
 
 
 function checkCreditCard(ccNumber){
-    let check = new RegExp("(([0-9]{4}[- ]{0,1}){3})[0-9]{4}");
+    let check = new RegExp("([0-9]{4}[- ]{0,1}){3}[0-9]{4}");
 
     if (check.test(ccNumber)){
         return 'Valid'

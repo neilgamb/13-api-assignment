@@ -1600,14 +1600,18 @@ body section.payment {
   @media (min-width: 1000px) {
       body section.payment:last-child:not(:first-child) {
         float: right; } }
-  body section.payment p.paymentInfo {
-    display: inline-block;
-    width: 50%;
-    text-align: right;
-    padding-right: 20px; }
-  body section.payment select.cardType {
-    width: 46%;
-    line-height: 1.15; }
+  body section.payment div.paymentDiv {
+    width: 100%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    display: inline; }
+    @media print, screen and (min-width: 40em) {
+      body section.payment div.paymentDiv {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; } }
+    body section.payment div.paymentDiv:last-child:not(:first-child) {
+      float: right; }
 
 body .tableID {
   width: 66.66667%;
@@ -1634,5 +1638,4 @@ body .tableID {
 
 .fa-check-circle {
   color: white;
-  margin-left: 10px;
   border: none; }
