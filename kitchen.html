@@ -20,6 +20,7 @@
                 <button class="complete">Complete</button>
         </script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    <link href="https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="kitchen.js"></script>
@@ -28,7 +29,15 @@
 
 <body class="kitchenPage">
     <header>
-        <h1>KITCHEN</h1>
+        <h1>
+            <div class="dropdown">
+            <button class="fa fa-bars"></button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="menu.html">MENU</a>
+                <a href="cart.html">CHECKOUT</a>
+            </div>
+            </div>
+            KITCHEN</h1>
     </header>
     <main>
         <section class="menu"></section>

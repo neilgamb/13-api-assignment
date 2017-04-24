@@ -46,7 +46,7 @@ body {
         font-family: 'Roboto', sans-serif;
         color: white;
         background-color: black;
-        // opacity: .8;
+        opacity: .8;
         
         @media(min-width: 500px){
             @include grid-column(12);
@@ -69,6 +69,27 @@ body {
         }
 
     }
+
+    .tableID {
+        @include grid-column(8);
+        @include grid-column-offset(2);
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.5em;
+        color: black;
+        background-color: white;
+        opacity: .8;
+        border: none;
+        border-radius: 4px;
+        padding: 3px;
+        margin-bottom: 20px;
+        }
+}
+
+.fa-check-circle {
+    color: white;
+    margin-left: 10px;
+    border: none;
 }
 
 

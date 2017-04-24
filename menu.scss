@@ -6,8 +6,9 @@ body {
         h1 {
             @include grid-column(12);
             color: white;
+            letter-spacing: 5px;
             font-family: 'Stint Ultra Expanded', cursive;
-            font-size: 3em;
+            font-size: 2.8em;
             margin-bottom: 15px;
             text-align: center;
         }
@@ -44,7 +45,7 @@ body {
                 margin-bottom: 20px;
                 padding: 15px 30px;
                 color: #fff;
-                background-color: #279AF1;
+                background-color: #BA4A00;
             }
 
             p.descr {
@@ -69,6 +70,62 @@ body section.menu div.menuItem:last-child:not(:first-child) {
 }
 
 
+//NAVBAR styling
+
+.fa-bars {
+    color: white;
+    float: left;
+}
+
+/* Dropdown Button */
+.fa {
+    background-color: black;
+    opacity: .9;
+    color: white;
+    padding: 16px;
+    border: solid;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.fa:hover, .fa:focus {
+    background-color: white;
+    color: black;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.fa {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    font-size: .5em;
+    font-family: roboto;
+    position: absolute;
+    background-color: black;
+    opacity: .9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1; color: black}
+
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
 
 
 

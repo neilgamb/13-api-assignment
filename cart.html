@@ -11,10 +11,8 @@
             <p class="billTable">{{ description }}</p>
             <p class="billItem">${{ price }}</p>
     </script>
-    <!--<script type="x-mustache-template" id="dropdown-template">
-            <option value="{{ tableName }}">{{ tableName }}</option>
-    </script>-->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
     <link href="https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="cart.js"></script>
@@ -23,7 +21,15 @@
 
 <body class="cartPage">
     <header>
-        <h1>CART</h1>
+        <h1>
+            <div class="dropdown">
+            <button class="fa fa-bars"></button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="menu.html">MENU</a>
+                <a href="kitchen.html">KITCHEN</a>
+            </div>
+            </div>
+            CART</h1>
     </header>
 
     <main>
@@ -34,16 +40,16 @@
         </section>
         <section class="menu"></section>
         <section class="payment">
-            <p class="paymentInfo">NAME</p><input></input>
+            <p class="paymentInfo">NAME</p><input class="name"></input><span> <span><i class="fa fa-check-circle fa-lg" id="anyName"aria-hidden="true"></i>
             <p class="paymentInfo">CREDIT CARD TYPE</p><select class="cardType">
                                                         <option value="">Select One</option>
-                                                        <option value="Visa">Visa</option>
+                                                        <option value="Visa">Visa</option>  
                                                         <option value="Mastercard">Mastercard</option>
                                                         <option value="American Express">American Express</option>
                                                         <option value="Discover">Discover</option>
                                                        </select>
-            <p class="paymentInfo">CREDIT CARD #</p><input></input>
-            <p class="paymentInfo">EMAIL</p><input></input>
+            <p class="paymentInfo">CREDIT CARD #</p><input class="creditCardNum"></input><span> <span><i class="fa fa-check-circle fa-lg" id="ccNUM"aria-hidden="true"></i>
+            <p class="paymentInfo">EMAIL</p><input class="email"></input><i class="fa fa-check-circle fa-lg" id="checkEmail"aria-hidden="true"></i>
         </section>
     </main>
 </body>

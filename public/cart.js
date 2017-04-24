@@ -88,12 +88,16 @@ function getTables() {
 
                     getTotal(selection.value);
                     getBill(selection.value);
+                    let hide = document.querySelector('.pickOrder');
+                    hide.style.display = "none";
 
                 });
 
                 for(let i = 0; i < response.length; i++){
                             addTable(response[i].table_id);
                 };
+
+
                 
             });
 
@@ -115,5 +119,107 @@ function addTable(table_id){
 
 window.addEventListener('load', function() {
     getTables();
+
+// RegEX Validation
+
+// 1. Credit Card Number
+let creditCardNum = document.querySelector('.creditCardNum');
+creditCardNum.addEventListener('keyup', function () {
+        if(validateCC.ccCheck(creditCardNum.value)==='Valid'){
+        document.getElementById("ccNUM").style.color = "green";
+         } 
 });
+
+// 2. Name (any string containing only alpha chars)
+let name = document.querySelector('.name');
+name.addEventListener('keyup', function(){
+        if(validateName.alphaCheck(name.value)==="Valid"){
+        document.getElementById("anyName").style.color = "green";
+        }
+});
+
+// 3. Email 
+let email = document.querySelector('.email');
+email.addEventListener('keyup', function(){
+        if(validateEmail.emailCheck(email.value)==="Valid"){
+        document.getElementById("checkEmail").style.color = "green";
+        }
+});
+
+/* Nav Bars - When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+    let navigation = document.querySelector('.fa');
+    navigation.addEventListener('click', function(){
+        console.log('test');
+        document.getElementById("myDropdown").classList.toggle("show");
+});
+
+});
+
+// Import Regex Modules
+let validateCC = require('./shared'); 
+let validateName = require('./shared'); 
+let validateEmail = require('./shared'); 
+
+// Nav Bars - Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.fa')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
+
+
+
+
+},{"./shared":2}],2:[function(require,module,exports){
+// EXPORT SHARED REGEX MODULES 
+
+module.exports = {
+    ccCheck: checkCreditCard,
+    alphaCheck: checkAlpha,
+    emailCheck: checkEmail,
+};
+
+
+function checkCreditCard(ccNumber){
+    let check = new RegExp("(([0-9]{4}[- ]{0,1}){3})[0-9]{4}");
+
+    if (check.test(ccNumber)){
+        return 'Valid'
+    } else {
+        return 'Invalid Credit Card Number'
+    }   
+}
+
+function checkAlpha(string){
+    let check = new RegExp("[A-Za-z]+");
+
+    if (check.test(string)){
+        return 'Valid'
+    } else {
+        return 'Invalid'
+    }   
+}
+
+function checkEmail(email){
+    let check = new RegExp("[A-Za-z0-9._+-]+@[a-zA-Z0-9.-]+\.[A-Za-z0-9]+");
+
+    if (check.test(email)){
+        return 'Valid'
+    } else {
+        return 'Invalid'
+    }   
+}
+
+
 },{}]},{},[1]);

@@ -47,7 +47,6 @@ function addItem(item){
     let button = container.querySelector('.order');
     button.addEventListener('click', function(){
         let request = new XMLHttpRequest();
-        console.log("est");
         request.open('POST', 'http://tiy-28202.herokuapp.com/order');
         request.send(JSON.stringify({
             table_id: 'neilson',
@@ -58,7 +57,32 @@ function addItem(item){
 
 window.addEventListener('load', function() {
     getMenu(); 
+
+/* Nav Bars - When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+    let navigation = document.querySelector('.fa');
+    navigation.addEventListener('click', function(){
+        console.log('test');
+        document.getElementById("myDropdown").classList.toggle("show");
 });
+
+});
+
+
+// Nav Bars - Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.fa')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
 
 
 },{}]},{},[1]);

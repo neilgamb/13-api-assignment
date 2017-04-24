@@ -1273,8 +1273,9 @@ body header {
     padding-right: 0.625rem;
     padding-left: 0.625rem;
     color: white;
+    letter-spacing: 5px;
     font-family: 'Stint Ultra Expanded', cursive;
-    font-size: 3em;
+    font-size: 2.8em;
     margin-bottom: 15px;
     text-align: center; }
     @media print, screen and (min-width: 40em) {
@@ -1345,7 +1346,7 @@ body section.menu {
       margin-bottom: 20px;
       padding: 15px 30px;
       color: #fff;
-      background-color: #279AF1; }
+      background-color: #BA4A00; }
     body section.menu div.menuItem p.descr {
       font-size: 1.2em; }
     body section.menu div.menuItem p.price {
@@ -1357,6 +1358,57 @@ body section.menu div.menuItem:last-child:not(:first-child) {
 
 .menuPage {
   background-image: url("https://images6.alphacoders.com/366/366291.jpg"); }
+
+.fa-bars {
+  color: white;
+  float: left; }
+
+/* Dropdown Button */
+.fa {
+  background-color: black;
+  opacity: .9;
+  color: white;
+  padding: 16px;
+  border: solid;
+  cursor: pointer; }
+
+/* Dropdown button on hover & focus */
+.fa:hover, .fa:focus {
+  background-color: white;
+  color: black; }
+
+/* The container <div> - needed to position the dropdown content */
+.fa {
+  position: relative;
+  display: inline-block; }
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  font-size: .5em;
+  font-family: roboto;
+  position: absolute;
+  background-color: black;
+  opacity: .9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1; }
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; }
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: black; }
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block; }
 
 body section.menu div.menuItem p.avail {
   font-size: 1.6em;
@@ -1451,7 +1503,7 @@ body section.menu div.menuItem:last-child:not(:first-child) {
   float: left; }
 
 .kitchenPage {
-  background-image: url("https://static1.squarespace.com/static/55cbaa33e4b0760585a10406/t/55ff919ee4b033763a5abe7f/1442812321589/unique-restaurant-kitchen-background-on-kitchen-inspiration.jpg?format=1500w"); }
+  background-image: url("http://multi-clean.com/wp-content/uploads/2016/02/tabletop3.jpg"); }
 
 .cartPage {
   background-image: url("http://multi-clean.com/wp-content/uploads/2016/02/tabletop3.jpg"); }
@@ -1515,7 +1567,8 @@ body section.payment {
   margin-left: auto;
   font-family: 'Roboto', sans-serif;
   color: white;
-  background-color: black; }
+  background-color: black;
+  opacity: .8; }
   body section.payment::before, body section.payment::after {
     display: table;
     content: ' '; }
@@ -1555,3 +1608,31 @@ body section.payment {
   body section.payment select.cardType {
     width: 46%;
     line-height: 1.15; }
+
+body .tableID {
+  width: 66.66667%;
+  float: left;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+  margin-left: 16.66667%;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
+  color: black;
+  background-color: white;
+  opacity: .8;
+  border: none;
+  border-radius: 4px;
+  padding: 3px;
+  margin-bottom: 20px; }
+  @media print, screen and (min-width: 40em) {
+    body .tableID {
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem; } }
+  body .tableID:last-child:not(:first-child) {
+    float: right; }
+
+.fa-check-circle {
+  color: white;
+  margin-left: 10px;
+  border: none; }
